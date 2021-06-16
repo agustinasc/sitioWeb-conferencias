@@ -21,6 +21,9 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="./css/all.min.css  ">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 
   <meta name="theme-color" content="#fafafa">
 </head>
@@ -65,7 +68,7 @@
       <a href="#">Conferencia</a>
       <a href="#">Calendario</a>
       <a href="#">Invitados</a>
-      <a href="#">Reservaciones</a>
+      <a href="./seccionRegistroHTMLyCSS/registro.html">Reservaciones</a>
     </nav>
   </div>
 </div>
@@ -105,9 +108,7 @@
             <p><i class="fas fa-calendar"></i>10 de Dic</p>
             <p><i class="fas fa-user"></i>Juan Pablo de la Torre Valdez</p>
           </div>
-        </div>
 
-        <div id="talleres" class="info-cursos ocultar clearfix">
           <div class="detalle-evento">
             <h3>Responsive Web Desingt</h3>
             <p><i class="fas fa-clock"></i>20:00 hrs</p>
@@ -116,6 +117,40 @@
           </div>
           <a href="#" class="buttom float-right">Ver todos</a>
         </div> <!-- FIN SECCION TALLERES -->
+
+        <div id="conferencias" class="info-curso ocultar clearfix">
+          <div class="detalle-evento">
+            <h3>Como ser freelancer</h3>
+            <p><i class="fas fa-clock"></i>10:00 hrs</p>
+            <p><i class="fas fa-calendar"></i>10 de Dic</p>
+            <p><i class="fas fa-user"></i>Gregorio Sanchez</p>
+          </div>
+                
+          <div class="detalle-evento">
+            <h3>Tecnologias del futuro</h3>
+            <p><i class="fas fa-clock"></i>17:00 hrs</p>
+            <p><i class="fas fa-calendar"></i>10 de Dic</p>
+            <p><i class="fas fa-user"></i>Susan Sanchez</p>
+          </div>
+          <a href="#" class="buttom float-right">Ver todos</a>
+        </div> <!-- FIN SECCION CONFERENCIAS -->
+        
+        <div id="seminarios" class="info-curso ocultar clearfix">
+          <div class="detalle-evento">
+            <h3>Diseño UI/UX para móviles</h3>
+            <p><i class="fas fa-clock"></i>17:00 hrs</p>
+            <p><i class="fas fa-calendar"></i>11 de Dic</p>
+            <p><i class="fas fa-user"></i>Harold Garcia</p>
+          </div>
+      
+          <div class="detalle-evento">
+            <h3>Aprende a programar en una mañana</h3>
+            <p><i class="fas fa-clock"></i>10:00 hrs</p>
+            <p><i class="fas fa-calendar"></i>11 de Dic</p>
+            <p><i class="fas fa-user"></i>Susana Rivera</p>
+          </div>
+          <a href="#" class="buttom float-right">Ver todos</a>
+        </div> <!-- FIN SECCION SEMINARIOS -->
       
       </div> <!-- FIN SECCION PROGRAMA EVENTO -->
     </div> <!-- FIN CONTENEDOR -->
@@ -170,10 +205,10 @@
 <div class="contador parallax">
   <div class="contenedor">
     <ul class="resumen-evento clearfix">
-      <li><p class="numero">6</p>Invitados</li>
-      <li><p class="numero">15</p>Talleres</li>
-      <li><p class="numero">3</p>Dias</li>
-      <li><p class="numero">9</p>Conferencias</li>
+      <li><p class="numero"></p>Invitados</li>
+      <li><p class="numero"></p>Talleres</li>
+      <li><p class="numero"></p>Dias</li>
+      <li><p class="numero"></p>Conferencias</li>
     </ul>
   </div>
 </div>
@@ -271,10 +306,10 @@
     <h2>faltan</h2>
     <div class="cuenta-regresiva contenedor">
       <ul class="clearfix">
-        <li><p class="numero">80</p>dias</li>
-        <li><p class="numero">15</p>horas</li>
-        <li><p class="numero">5</p>minutos</li>
-        <li><p class="numero">30</p>segundos</li>
+        <li><p id="dias" class="numero"></p>dias</li>
+        <li><p id="horas" class="numero"></p>horas</li>
+        <li><p id="minutos" class="numero"></p>minutos</li>
+        <li><p id="segundos" class="numero"></p>segundos</li>
       </ul>
     </div>
   </section>
@@ -314,7 +349,12 @@
 
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
+  <script src="./js/jquery.animateNumber.min.js"></script>
+  <script src="./js/jquery.countdown.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src="./js/main.js"></script>
+  
+
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
