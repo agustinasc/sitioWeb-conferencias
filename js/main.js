@@ -77,7 +77,9 @@ const calcularMontos = () =>{
     }
 }
 
-calcular.addEventListener('click', calcularMontos);
+if(document.getElementById('calcular')){
+
+    calcular.addEventListener('click', calcularMontos);
 
 
 const mostrarDias = () => {
@@ -103,6 +105,7 @@ const mostrarDias = () => {
     for (let i = 0; i < diasElegidos.length; i++) {
         document.getElementById(diasElegidos[i]).style.display = "block";
         
+    }
     }
 }
 pase_dia.addEventListener('blur', mostrarDias);
@@ -149,6 +152,35 @@ email.addEventListener('blur', validarEmail)
 //JQUERY
 
 jQuery(document).ready(function(){
+
+    //Lettering
+    $('.nombre-sitio').lettering();
+
+    //Menu fijo
+
+    let windowHeight = $(window).height();
+    let barraAltura = $('.barra').innerHeight();
+
+    //console.log(barraAltura);
+
+    $(window).scroll(function() {
+        let scroll = $(window).scrollTop()
+        //console.log(scroll);
+
+            if(scroll > windowHeight){
+                $('.barra').addClass('fixed');
+                $('body').css({'margin-top': barraAltura+'px' });
+            }else {
+                $('.barra').removeClass('fixed');
+                $('body').css({'margin-top':'0px'})
+            }
+        });
+
+    //Menu responsieve
+
+    $('.menu-movil').on('click', function(){
+        $('.navegacion-principal').slideToggle();
+    })
     
     //Programa de Conferencias
     $('.programa-evento .info-curso:first').show();
@@ -179,5 +211,7 @@ jQuery(document).ready(function(){
         $('#minutos').html(event.strftime('%M'));
         $('#segundos').html(event.strftime('%S'));
     })
+
+
 
 })
